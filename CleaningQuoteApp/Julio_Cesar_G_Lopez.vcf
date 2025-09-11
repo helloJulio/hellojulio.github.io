@@ -1,0 +1,54 @@
+import qrcode
+
+from PIL import Image
+
+# Expected public URL of the VCF on GitHub Pages
+vcf_url = "https://hellojulio.github.io/cleaning-business-card/Julio_Cesar_G_Lopez.vcf"
+
+# Function to make a colored QR with center logo
+def make_qr_with_logo(url, out_path, fill_color="#0A6EBD", logo_path=None):
+    qr = qrcode.QRCode(
+        version=4,
+        error_correction=qrcode.constants.ERROR_CORRECT_H,
+        box_size=10,
+        border=4,
+    )
+    qr.add_data(url)
+    qr.make(fit=True)
+    img = qr.make_image(fill_color=fill_color, back_color="white").convert("RGB")
+    if logo_path:
+        logo = Image.open(logo_path)
+        # ensure square crop for better fit
+        w, h = logo.size
+        s = min(w, h)
+        left = (w - s) // 2
+        top = (h - s) // 2
+        logo = logo.crop((left, top, left + s, top + s))
+        # resize
+        box = img.size[0] // 4
+        logo = logo.resize((box, box))
+        pos = ((img.size[0] - logo.size[0]) // 2, (img.size[1] - logo.size[1]) // 2)
+        img.paste(logo, pos)
+    img.save(out_path)
+    return out_path
+
+# Paths
+logo_path = "/mnt/data/ef60e637-a01f-4d63-b107-c9d5fd80dee8.jpg"
+out_colored = "/mnt/data/vodoco_vcf_qr_colored.png"
+out_bw = "/mnt/data/vodoco_vcf_qr_bw.png"
+
+# Create QR with logo (green/blue tone) and a black/white fallback
+make_qr_with_logo(vcf_url, out_colored, fill_color="#0A6EBD", logo_path=logo_path)
+
+qr_bw = qrcode.QRCode(
+    version=4,
+    error_correction=qrcode.constants.ERROR_CORRECT_Q,
+    box_size=10,
+    border=4,
+)
+qr_bw.add_data(vcf_url)
+qr_bw.make(fit=True)
+img_bw = qr_bw.make_image(fill_color="black", back_color="white")
+img_bw.save(out_bw)
+
+out_colored, out_bw
