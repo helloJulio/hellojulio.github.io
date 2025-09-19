@@ -5,19 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vodoco Services – Professional Cleaning</title>
   <meta name="description" content="Vodoco Services: reliable domestic, office & strata cleaning in Sydney. Carpet steam, end of tenancy and more.">
-
   <style>
     :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#eaf6f3; }
-
-    /* ===== TU ESTILO DE PÁGINA (NO TOCADO) ===== */
     *{box-sizing:border-box}
     body{
       margin:0; font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink); background:var(--muted); line-height:1.6;
-      /* OJO: sin padding-top extra */
     }
     header{ background:var(--brand); color:#fff; padding:26px 16px; text-align:center }
     header img{ max-height:70px; display:block; margin:0 auto 12px }
+    h1,h2{margin:0 0 12px}
+    p{margin:0 0 12px}
     .container{ max-width:1000px; margin:18px auto; padding:0 16px }
     .lead{ font-size:1.05rem; margin:10px 0 0 0 }
     .btnbar{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0}
@@ -26,48 +24,9 @@
     .button.primary:hover{filter:brightness(.92)}
     footer{margin-top:30px; padding:16px; font-size:.9rem; color:#555; background:#f5f7f8; text-align:center}
     footer a{color:var(--brand); text-decoration:none}
-
-    /* ===== NAV AISLADA (prefijo vnav-) ===== */
-    .vnav-bar{
-      position: sticky; top: 0; z-index: 999; /* sticky, sin tocar body */
-      background:#ffffffcc; backdrop-filter: blur(6px);
-      border-bottom:1px solid #e5e8ea;
-    }
-    .vnav-wrap{
-      max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:14px;
-      padding:10px 14px;
-    }
-    .vnav-brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--brand); text-decoration:none}
-    .vnav-brand img{height:28px}
-    .vnav-nav{margin-left:auto; display:flex; gap:10px; flex-wrap:wrap}
-    .vnav-btn{display:inline-block; padding:8px 14px; border-radius:10px; text-decoration:none; font-weight:600; transition:.2s}
-    .vnav-btn--ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
-    .vnav-btn--ghost:hover{background:var(--brand); color:#fff}
-    .vnav-btn--primary{background:var(--brand); color:#fff}
-    .vnav-btn--primary:hover{filter:brightness(.92)}
-    .vnav-active{outline:2px solid #00796B22}
-
-    @media (max-width:640px){
-      .vnav-nav{width:100%; justify-content:flex-end}
-    }
   </style>
 </head>
 <body>
-
-  <!-- NAVBAR AISLADA (NO ROMPE TU LAYOUT) -->
-  <nav class="vnav-bar">
-    <div class="vnav-wrap">
-      <a class="vnav-brand" href="index.html">
-        <img src="logo.png" alt="Vodoco logo">
-        Vodoco Services
-      </a>
-      <div class="vnav-nav">
-        <a href="index.html" class="vnav-btn vnav-btn--ghost" data-nav="home">Home</a>
-        <a href="about.html" class="vnav-btn vnav-btn--ghost" data-nav="about">About Us</a>
-        <a href="https://hellojulio.github.io/CleaningQuoteApp/quote.html" class="vnav-btn vnav-btn--primary" data-nav="quote">Get Quote</a>
-      </div>
-    </div>
-  </nav>
 
   <!-- HERO -->
   <header>
@@ -79,6 +38,11 @@
   <!-- CONTENIDO -->
   <main class="container">
     <div class="btnbar">
+      <a href="about.html" class="button">About Us</a>
+      <a href="https://hellojulio.github.io/CleaningQuoteApp/quote.html" class="button primary">Get Quote</a>
+    </div>
+
+    <div class="btnbar">
       <a href="tel:0413387095" class="button primary">Call: 0413 387 095</a>
       <a href="https://wa.me/61413387095" class="button primary">WhatsApp</a>
     </div>
@@ -89,16 +53,5 @@
     <p><a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a></p>
   </footer>
 
-  <script>
-    // Marca activo (solo dentro del nav aislado)
-    (function(){
-      const path = location.pathname.toLowerCase();
-      document.querySelectorAll('[data-nav]').forEach(a=>{
-        const id = a.dataset.nav;
-        if (id==='home' && (path.endsWith('/') || path.endsWith('/index.html'))) a.classList.add('vnav-active');
-        if (id==='about' && path.endsWith('/about.html')) a.classList.add('vnav-active');
-      });
-    })();
-  </script>
 </body>
 </html>
