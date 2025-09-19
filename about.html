@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Vodoco Services</title>
+  <style>
+    :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#f5f7f8; }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--muted);line-height:1.6}
+    header{background:var(--brand);color:#fff;padding:22px 16px;text-align:center}
+    header img{max-height:60px;display:block;margin:0 auto 8px}
+    .hero img{width:100%;max-height:520px;object-fit:cover;border-bottom:6px solid var(--brand)}
+    .container{max-width:980px;margin:22px auto;padding:16px}
+    .card{background:var(--paper);border-radius:14px;box-shadow:0 6px 18px rgba(0,0,0,.06);padding:22px}
+    h1{color:var(--brand);margin:0 0 12px}
+    p{margin:0 0 12px}
+    .btnbar{display:flex;gap:12px;flex-wrap:wrap;margin-top:10px}
+    .button{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600}
+    .button.primary{background:var(--brand);color:#fff}
+    .button.ghost{border:2px solid var(--brand);color:var(--brand);background:transparent}
+    footer.site{padding:16px;text-align:center;color:#555}
+    footer.site a{color:var(--brand);text-decoration:none}
+  </style>
+</head>
+<body>
+
+  <header>
+    <!-- Cambia logo.png por tu archivo real si ya lo tienes -->
+    <img src="logo.png" alt="Vodoco Services Logo" />
+    <h2>Vodoco Services – Professional Cleaning</h2>
+  </header>
+
+  <!-- HERO con tu foto real -->
+  <section class="hero">
+    <img src="cleaning-chair.jpg" alt="Vodoco Services – Upholstery & chair cleaning in action">
+  </section>
+
+  <main class="container">
+    <section class="card">
+      <h1>About Us</h1>
+      <p>We are a local cleaning business serving Sydney’s Eastern Suburbs. Our team delivers reliable, detail-oriented and friendly service with fair pricing and a 100% satisfaction guarantee.</p>
+      <p>Services include domestic cleaning, strata & office cleaning, high-pressure wash, carpet steam cleaning and end-of-tenancy cleans.</p>
+      <div class="btnbar">
+        <a href="index.html" class="button ghost">Back to Home</a>
+        <!-- Si tu ruta de quote es distinta, cambia este href -->
+        <a href="quote.html" class="button primary">Get Quote</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site">
+    <div>3303/39 Rhodes St, Hillsdale NSW 2036 · ABN 31 595 981 360 · PayID 0413 387 095 ·
+      <a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
