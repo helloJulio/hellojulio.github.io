@@ -5,22 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vodoco Services – Professional Cleaning</title>
   <meta name="description" content="Vodoco Services: reliable domestic, office & strata cleaning in Sydney. Carpet steam, end of tenancy and more.">
+
   <style>
     :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#eaf6f3; }
     *{box-sizing:border-box}
+    /* NO centramos todo el sitio */
     body{
       margin:0; font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
       color:var(--ink); background:var(--muted); line-height:1.6;
       padding-top:64px; /* espacio para la barra fija */
     }
-    /* NAVBAR FIJO */
+
+    /* NAVBAR fijo (ligero y sin tocar tu layout) */
     .topbar{
       position:fixed; top:0; left:0; right:0; z-index:999;
       background:#ffffffcc; backdrop-filter: blur(6px);
       border-bottom:1px solid #e5e8ea;
     }
     .topbar .wrap{
-      max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:14px;
+      max-width:1100px; margin:0 auto;
+      display:flex; align-items:center; gap:14px;
       padding:10px 14px;
     }
     .brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--brand); text-decoration:none}
@@ -32,17 +36,28 @@
     .button.ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
     .button.ghost:hover{background:var(--brand); color:#fff}
 
-    /* HERO solo centrado */
-    header{ background:var(--brand); color:#fff; padding:26px 16px; text-align:center }
+    /* HERO solo centrado (no afecta al resto) */
+    header{
+      background:var(--brand); color:#fff; padding:26px 16px; text-align:center
+    }
     header img{ max-height:70px; display:block; margin:0 auto 12px }
 
-    /* Contenido genérico; NO centramos todo */
+    /* Contenido libre con ancho controlado */
     .container{ max-width:1000px; margin:18px auto; padding:0 16px }
     .lead{ font-size:1.05rem; margin:10px 0 0 0 }
 
+    /* Botoneras centradas (solo estas) */
     .btnbar{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0}
+    .btnbar .button{ text-decoration:none }
+
+    /* Footer intacto */
     footer{margin-top:30px; padding:16px; font-size:.9rem; color:#555; background:#f5f7f8; text-align:center}
     footer a{color:var(--brand); text-decoration:none}
+
+    /* Estado activo opcional */
+    .active{outline:2px solid #00796B22}
+
+    /* Móvil: un poquito más de espacio para la barra */
     @media (max-width:640px){ body{ padding-top:72px } }
   </style>
 </head>
@@ -70,7 +85,7 @@
     <p class="lead">Reliable domestic, office & strata cleaning across Sydney. Carpet steam, end of tenancy, and more.</p>
   </header>
 
-  <!-- CONTENIDO LIBRE (si tienes bloques propios, colócalos aquí) -->
+  <!-- CONTENIDO (deja aquí tus bloques existentes si tienes) -->
   <main class="container">
     <!-- Ejemplo: botones de contacto -->
     <div class="btnbar">
