@@ -1,93 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Vodoco Services – Professional Cleaning</title>
-  <style>
-    :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#eaf6f3; }
-    *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--muted);line-height:1.6;text-align:center; padding-top:64px;}
-    /* Top fixed nav */
-    .topbar{
-      position:fixed; top:0; left:0; right:0; z-index:999;
-      background:#ffffffcc; backdrop-filter: blur(6px);
-      border-bottom:1px solid #e5e8ea;
-    }
-    .topbar .wrap{
-      max-width:1100px; margin:0 auto; display:flex; align-items:center; gap:14px;
-      padding:10px 14px;
-    }
-    .brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--brand); text-decoration:none}
-    .brand img{height:28px}
-    .nav{margin-left:auto; display:flex; gap:10px; flex-wrap:wrap}
-    .button{display:inline-block; padding:8px 14px; border-radius:10px; text-decoration:none; font-weight:600; transition:.2s}
-    .button.primary{background:var(--brand); color:#fff}
-    .button.primary:hover{filter:brightness(.92)}
-    .button.ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
-    .button.ghost:hover{background:var(--brand); color:#fff}
-    header{background:var(--brand); color:#fff; padding:26px 16px}
-    header img{max-height:70px; display:block; margin:0 auto 12px}
-    h1,h2{color:var(--brand); margin:0 0 12px}
-    p{margin:0 0 12px}
-    .btnbar{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0}
-    footer{margin-top:30px; padding:16px; font-size:.9rem; color:#555; background:#f5f7f8}
-    footer a{color:var(--brand); text-decoration:none}
-    /* Active state */
-    .active{outline:2px solid #00796B22}
-    @media (max-width:640px){
-      body{padding-top:72px}
-      .nav{width:100%; justify-content:flex-end}
-    }
-  </style>
-</head>
-<body>
+<style>
+  :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#eaf6f3; }
+  *{box-sizing:border-box}
+  /* Quitamos centrar todo para no romper la home */
+  body{
+    margin:0;
+    font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;
+    color:var(--ink);
+    background:var(--muted);
+    line-height:1.6;
+    padding-top:64px; /* espacio para la barra fija */
+  }
 
-  <!-- NAVBAR FIJO -->
-  <nav class="topbar">
-    <div class="wrap">
-      <a class="brand" href="index.html">
-        <img src="logo.png" alt="Vodoco logo">
-        Vodoco Services
-      </a>
-      <div class="nav">
-        <a href="index.html" class="button ghost" data-nav="home">Home</a>
-        <a href="about.html" class="button ghost" data-nav="about">About Us</a>
-        <a href="https://hellojulio.github.io/CleaningQuoteApp/quote.html" class="button primary" data-nav="quote">Get Quote</a>
-      </div>
-    </div>
-  </nav>
+  /* NAVBAR fijo (ligero) */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:999;
+    background:#ffffffcc; backdrop-filter: blur(6px);
+    border-bottom:1px solid #e5e8ea;
+  }
+  .topbar .wrap{
+    max-width:1100px; margin:0 auto;
+    display:flex; align-items:center; gap:14px;
+    padding:10px 14px;
+  }
+  .brand{display:flex; align-items:center; gap:10px; font-weight:700; color:var(--brand); text-decoration:none}
+  .brand img{height:28px}
+  .nav{margin-left:auto; display:flex; gap:10px; flex-wrap:wrap}
+  .button{display:inline-block; padding:8px 14px; border-radius:10px; text-decoration:none; font-weight:600; transition:.2s}
+  .button.primary{background:var(--brand); color:#fff}
+  .button.primary:hover{filter:brightness(.92)}
+  .button.ghost{background:transparent; color:var(--brand); border:2px solid var(--brand)}
+  .button.ghost:hover{background:var(--brand); color:#fff}
 
-  <!-- HERO/HEADER -->
-  <header>
-    <img src="logo.png" alt="Vodoco Services Logo">
-    <h1>Vodoco Services – Professional Cleaning</h1>
-    <p>Reliable domestic, office & strata cleaning across Sydney. Carpet steam, end of tenancy, and more.</p>
-  </header>
+  /* Solo el hero centrado, NO toda la página */
+  header{
+    background:var(--brand);
+    color:#fff;
+    padding:26px 16px;
+    text-align:center;
+  }
+  header img{max-height:70px; display:block; margin:0 auto 12px}
 
-  <!-- Botones de contacto -->
-  <div class="btnbar">
-    <a href="tel:0413387095" class="button primary">Call: 0413 387 095</a>
-    <a href="https://wa.me/61413387095" class="button primary">WhatsApp</a>
-  </div>
+  /* Barras de botones centradas cuando las uses */
+  .btnbar{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin:16px 0}
 
-  <footer>
-    <p>3303/39 Rhodes St, Hillsdale NSW 2036 · ABN 31 595 981 360 · PayID 0413 387 095</p>
-    <p><a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a></p>
-  </footer>
+  footer{margin-top:30px; padding:16px; font-size:.9rem; color:#555; background:#f5f7f8; text-align:center}
+  footer a{color:var(--brand); text-decoration:none}
 
-  <!-- Marca como activo según la página -->
-  <script>
-    (function(){
-      const path = location.pathname.toLowerCase();
-      const links = document.querySelectorAll('.nav a');
-      links.forEach(a=>{
-        const id = a.dataset.nav;
-        if (id==='home' && (path.endsWith('/') || path.endsWith('/index.html'))) a.classList.add('active');
-        if (id==='about' && path.endsWith('/about.html')) a.classList.add('active');
-        // Para Get Quote dejamos sin active (es externo a este repo)
-      });
-    })();
-  </script>
-</body>
-</html>
+  /* Estado activo opcional */
+  .active{outline:2px solid #00796B22}
+
+  @media (max-width:640px){
+    body{padding-top:72px}
+    .nav{width:100%; justify-content:flex-end}
+  }
+</style>
