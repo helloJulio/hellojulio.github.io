@@ -24,6 +24,11 @@
     /* Gallery grid */
     .gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:8px}
     .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px}
+    /* Testimonials */
+    .testimonials{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px}
+    blockquote{margin:0;padding:16px;border-radius:12px;background:#ffffff;border:1px solid #e9eef0}
+    blockquote p{margin:0 0 10px}
+    blockquote footer{font-size:.9rem;color:#555}
   </style>
 </head>
 <body>
@@ -47,7 +52,6 @@
       <p>Services include domestic cleaning, strata & office cleaning, high-pressure wash, carpet steam cleaning and end-of-tenancy cleans.</p>
       <div class="btnbar">
         <a href="index.html" class="button ghost">Back to Home</a>
-        <!-- Si tu ruta de quote es distinta, cambia este href -->
         <a href="quote.html" class="button primary">Get Quote</a>
       </div>
     </section>
@@ -59,6 +63,29 @@
         <img src="cleaning-chair.jpg" alt="Upholstery cleaning – dining chairs">
         <img src="carpet-room.jpg" alt="Carpet steam cleaning – bedroom">
         <img src="carpet-stairs.jpg" alt="Carpet steam cleaning – staircase">
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section class="card">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonials">
+
+        <blockquote>
+          <p>“Vodoco Services have been amazing. They’re reliable, friendly, and always leave my place spotless. It’s such a relief knowing I can count on them every time.”</p>
+          <footer>— <strong>Adam</strong></footer>
+        </blockquote>
+
+        <blockquote>
+          <p>“Julio and his crew have been cleaning my house for the last 10+ years. They are extremely reliable, detailed orientated and fast. If I ever need a deeper clean for anything they are happy to oblige and clean very well. Julio is very friendly and him and his crew are lovely too. Highly highly recommended.”</p>
+          <footer>— <strong>Lizzie Babarczy</strong></footer>
+        </blockquote>
+
+        <blockquote>
+          <p>“Vodoco Cleaning Services are great with communication, and their quality of work is above expectations. Great local company with an excellent customer focus—could not recommend them highly enough!”</p>
+          <footer>— <strong>Catherine Ilic</strong>, Senior Property Manager</footer>
+        </blockquote>
+
       </div>
     </section>
   </main>
