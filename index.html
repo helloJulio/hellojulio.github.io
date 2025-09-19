@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Vodoco Services – Professional Cleaning</title>
@@ -31,13 +29,13 @@
   <!-- Theme color para móvil -->
   <meta name="theme-color" content="#007f5f">
 
-  <!-- Favicon -->
+  <!-- Favicons -->
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
   <link rel="shortcut icon" href="/favicon.ico">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- Fonts & CSS -->
+  <!-- Fonts & CSS (tu hoja externa + estilos básicos de botones/layout) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -69,27 +67,41 @@
     ]
   }
   </script>
+
+  <!-- Estilos base (ligeros, no rompen tu styles.css) -->
   <style>
     :root { --brand:#00796B; --ink:#333; --paper:#fff; --muted:#f5f7f8; }
     *{box-sizing:border-box}
-    body{margin:0;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#eaf6f3;line-height:1.6;text-align:center}
-    header{background:var(--brand);color:#fff;padding:24px 16px}
+    body{margin:0;font-family:'Poppins',system-ui,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:#eaf6f3;line-height:1.6}
+    header{background:var(--brand);color:#fff;padding:24px 16px;text-align:center}
     header img{max-height:70px;display:block;margin:0 auto 12px}
     h1,h2{color:var(--brand);margin:0 0 12px}
     p{margin:0 0 12px}
+    .container{max-width:1100px;margin:0 auto;padding:0 16px}
+    .hero{padding:22px 16px;text-align:center}
     .btnbar{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin:14px 0}
     .button{display:inline-block;padding:10px 18px;border-radius:10px;text-decoration:none;font-weight:600;transition:0.2s}
     .button.primary{background:var(--brand);color:#fff}
     .button.primary:hover{filter:brightness(0.92)}
     .button.ghost{background:transparent;color:var(--brand);border:2px solid var(--brand)}
     .button.ghost:hover{background:var(--brand);color:#fff}
-    footer{margin-top:30px;padding:16px;font-size:0.9rem;color:#555;background:#f5f7f8}
-    footer a{color:var(--brand);text-decoration:none}
+    .price-note{max-width:900px;margin:0 auto 14px;background:#fff;border:1px solid #e7ecef;border-radius:10px;padding:12px}
+    .price-table{width:100%;max-width:900px;margin:0 auto;border-collapse:collapse;background:#fff;border:1px solid #e7ecef;border-radius:10px;overflow:hidden}
+    .price-table th,.price-table td{padding:12px;border-bottom:1px solid #eef2f4}
+    .price-table thead th{background:#f1f6f5;color:#0a3d37;text-align:left}
+    .addons{max-width:900px;margin:16px auto;background:#fff;border:1px solid #e7ecef;border-radius:10px;padding:12px}
+    .note{max-width:900px;margin:10px auto;text-align:center}
+    .services,.pricing,.contact{padding:22px 16px}
+    .service-list{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+    .service{background:#fff;border:1px solid #e7ecef;border-radius:10px;padding:10px 14px}
+    .footer{padding:18px;text-align:center;background:#f5f7f8;color:#555}
+    .footer a{color:var(--brand);text-decoration:none}
   </style>
 </head>
 
 <body>
-  <header class="header" role="banner">
+  <!-- Header -->
+  <header role="banner">
     <img src="logo-vodoco.png" alt="Vodoco Services Logo" class="logo" width="96" height="96">
     <div>
       <h1>Vodoco Services</h1>
@@ -98,27 +110,20 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero" aria-labelledby="hero-title">
+  <section class="hero container" aria-labelledby="hero-title">
     <h2 id="hero-title">Spotless results, guaranteed.</h2>
-  <header>
-    <img src="logo.png" alt="Vodoco Services Logo">
-    <h1>Vodoco Services – Professional Cleaning</h1>
     <p>Reliable domestic, office & strata cleaning across Sydney. Carpet steam, end of tenancy, and more.</p>
-    <div class="cta-row">
-     <div class="btnbar">
-  <a href="about.html" class="button ghost">About Us</a>
-  <a href="CleaningQuoteApp/quote.html" class="button primary">Get Quote</a>
-</div>
 
-      <a class="btn btn-outline" href="tel:+61413387095" aria-label="Call now">Call: 0413 387 095</a>
-      <a class="btn btn-whatsapp" href="https://wa.me/61413387095?text=Hi%20Julio%2C%20I%27d%20like%20a%20cleaning%20quote" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-        WhatsApp
-      </a>
+    <div class="btnbar">
+      <a href="about.html" class="button ghost">About Us</a>
+      <a href="CleaningQuoteApp/quote.html" class="button primary">Get Quote</a>
+      <a class="button primary" href="tel:+61413387095" aria-label="Call now">Call: 0413 387 095</a>
+      <a class="button primary" href="https://wa.me/61413387095?text=Hi%20Julio%2C%20I%27d%20like%20a%20cleaning%20quote" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WhatsApp</a>
     </div>
   </section>
 
   <!-- Services -->
-  <section class="services" aria-labelledby="services-title">
+  <section class="services container" aria-labelledby="services-title">
     <h2 id="services-title">Our Services</h2>
     <div class="service-list">
       <div class="service">Domestic Cleaning</div>
@@ -129,7 +134,7 @@
   </section>
 
   <!-- Pricing -->
-  <section class="pricing" id="pricing" aria-labelledby="pricing-title">
+  <section class="pricing container" id="pricing" aria-labelledby="pricing-title">
     <h2 id="pricing-title">Domestic Cleaning Packages – Eastern Suburbs</h2>
 
     <div class="price-note">
@@ -139,7 +144,7 @@
       </p>
     </div>
 
-    <table class="price-table">
+    <table class="price-table" aria-describedby="pricing-title">
       <thead>
         <tr>
           <th scope="col">Property</th>
@@ -203,17 +208,19 @@
       <a href="tel:+61413387095">0413 387 095</a>.
     </p>
 
-    <a class="btn" href="CleaningQuoteApp/quote.html">Request a Quote for Other Services</a>
+    <div class="btnbar">
+      <a class="button primary" href="CleaningQuoteApp/quote.html">Request a Quote for Other Services</a>
+    </div>
   </section>
 
   <!-- Contact -->
-  <section class="contact" aria-labelledby="contact-title">
+  <section class="contact container" aria-labelledby="contact-title">
     <h2 id="contact-title">Contact Us</h2>
     <p><strong>Phone:</strong> <a href="tel:+61413387095">0413 387 095</a></p>
     <p><strong>Email:</strong> <a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a></p>
     <p><strong>Address:</strong> 3303/39 Rhodes St, Hillsdale NSW 2036</p>
     <p><strong>ABN:</strong> 31 595 981 360</p>
-    <!-- (Opcional) Embed del mapa si quieres mostrarlo en página:
+    <!-- (Opcional) Google Map embed:
     <div class="map-embed">
       <iframe
         title="Vodoco Services Location"
@@ -225,27 +232,12 @@
     </div>
     -->
   </section>
-  </header>
 
   <!-- Footer -->
   <footer class="footer" role="contentinfo">
     <p>© 2025 Vodoco Services. All rights reserved.</p>
-  <!-- Botones principales -->
-  <div class="btnbar">
-    <a href="about.html" class="button ghost">About Us</a>
-    <a href="https://hellojulio.github.io/CleaningQuoteApp/quote.html" class="button primary">Get Quote</a>
-  </div>
-
-  <!-- Botones de contacto -->
-  <div class="btnbar">
-    <a href="tel:0413387095" class="button primary">Call: 0413 387 095</a>
-    <a href="https://wa.me/61413387095" class="button primary">WhatsApp</a>
-  </div>
-
-  <footer>
-    <p>3303/39 Rhodes St, Hillsdale NSW 2036 · ABN 31 595 981 360 · PayID 0413 387 095</p>
-    <p><a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a></p>
+    <p>3303/39 Rhodes St, Hillsdale NSW 2036 · ABN 31 595 981 360 · PayID 0413 387 095 ·
+      <a href="mailto:hello.vodoco@outlook.com">hello.vodoco@outlook.com</a></p>
   </footer>
-
 </body>
 </html>
